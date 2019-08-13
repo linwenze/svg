@@ -17,9 +17,11 @@ npm run build
 # build for production and view the bundle analyzer report
 
 ## SVG修改
-webpack 第8行
+安装插件
+npm install webpack-iconfont-plugin-nodejs --save
+webpack.base.conf.js 第7、8行
 var dir = 'src/iconfont'
-webpack37行
+webpack.base.conf.js第27行
 plugins: [
     new WebpackIconfontPluginNodejs({
       fontName: 'my-icons',
