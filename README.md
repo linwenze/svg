@@ -1,4 +1,4 @@
-# y
+# 自动用svg生成iconfont字体图标，支持热更新
 
 > A Vue.js project
 
