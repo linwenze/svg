@@ -73,7 +73,7 @@ npm install autoprefixer postcss-pxtorem --save
  2)安装 Vue.js devtools 谷歌插件（可不安装，为了方便调试）
  
  vuex
- state：存储状态（变量）
+ state：存储状态（变量）$store.state.tips  (tips这状态名称变量)
 getters：对数据获取之前的再次编译，可以理解为state的计算属性。我们在组件中使用 $sotre.getters.fun()
 mutations：修改状态，并且是同步的。在组件中使用$store.commit('',params)。这个和我们组件中的自定义事件类似。
 actions：异步操作。在组件中使用是$store.dispatch('')

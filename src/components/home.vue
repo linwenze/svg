@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     HOME页面
+    <div class="ico-view"></div>
+    <div class="ico-egg"></div>
     <div>
       <a href="/#/about">about</a>
     </div>

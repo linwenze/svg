@@ -8,7 +8,7 @@ const home = r => require.ensure([], () => r(require('@/components/home.vue')), 
 const about = r => require.ensure([], () => r(require('@/components/about.vue')), 'chunkname2')
 const message = r => require.ensure([], () => r(require('@/components/message.vue')), 'chunkname3')
 const HelloWorld = r => require.ensure([], () => r(require('@/components/HelloWorld.vue')), 'chunkname3')
-const singleStore = r => require.ensure([], () => r(require('@/components/singleStore.vue')), 'chunkname3')
+const singleStore = r => require.ensure([], () => r(require('@/components/singleStore.vue')), 'chunkname4')
 const modulesStore = r => require.ensure([], () => r(require('@/components/modulesStore.vue')), 'chunkname3')
 Vue.use(Router)
 
