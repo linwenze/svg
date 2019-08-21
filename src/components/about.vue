@@ -1,20 +1,21 @@
 <template>
- <div class="hello">
-    HELLOWORLD页面
-    <div>
-      <a href="/#/about">about</a>
-    </div>
+
+    <div class="hello">
+    ABOUT页面
+  
     <div>
       <a href="/#/message">message</a>
     </div>
-   
+    <div>
+      <a href="/#/HelloWorld">HelloWorld</a>
+    </div>
      <div>
       <a href="/#/singleStore">singleStore</a>
     </div>
      <div>
       <a href="/#/modulesStore">modulesStore</a>
     </div>
- </div>
+  </div>
 </template>
 
 <script>
@@ -24,7 +25,7 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
-  } 
+  }
 }
 </script>
 

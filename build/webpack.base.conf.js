@@ -6,10 +6,10 @@ const vueLoaderConfig = require('./vue-loader.conf')
 
 var WebpackIconfontPluginNodejs = require('webpack-iconfont-plugin-nodejs');
 var dir = 'src/iconfont'
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
 
 
 module.exports = {
@@ -64,6 +64,24 @@ module.exports = {
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
+      // {
+      //   test: /base.css$|index.css$/,
+      //   loader: 'postcss-loader'
+      //   // use: [
+      //   //   { loader: 'postcss-loader', options: {
+      //   //     ident: 'postcss',
+      //   //     plugins: () => [
+      //   //       require('autoprefixer'),
+      //   //        require('postcss-pxtorem')({
+      //   //         rootValue: 200,
+      //   //          propWhiteList: [],
+      //   //       }),
+              
+      //   //     ]
+      //   //   } }
+      //   // ],
+      // },
+       
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
