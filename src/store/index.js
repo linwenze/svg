@@ -8,7 +8,7 @@ import about from './modules/about'
 Vue.use(Vuex)
 const state = {
   tipShow:false,//是否提示报错
-  tips:'454554',//报错提示文字
+  tips:'error',//报错提示文字
   user:{},//用户信息
   list:[]//车型列表
 }

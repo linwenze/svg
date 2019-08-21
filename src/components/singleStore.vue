@@ -5,7 +5,7 @@
       <div>{{user.name}}</div>
     </div>
     <div style="border:1px solid #000">
-      初始化显示结果
+      初始化显示结果{{$store.state.tips}}
       <table border='1'>
         <tr v-for="(i,index) in list" :key="index">
           <td>{{i.name}}</td>
@@ -26,6 +26,8 @@
       
       <button @click="emptyList()">空列表</button>
       <button @click="error('出错了')">显示报错</button>
+      <button @click="activeDispath()">activeDispath显示报错</button>
+      <button @click="commitEvent()">commitEvent显示报错</button>
     <div>
       <a href="/#/about">about</a>
     </div>
@@ -74,6 +76,12 @@ export default {
        let list = [];
       this.setList(list);
 
+    },
+    activeDispath(){
+      this.$store.dispatch('error','activeDispath-error')
+    },
+     commitEvent(){
+      this.$store.commit('alertTips','commit-error')
     }
   },
   computed: {

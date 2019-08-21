@@ -1,7 +1,6 @@
 
 export default {
   error({commit}, tips) {
-	//   alert(tips)
     commit('alertTips', tips)
   },
   closeError({commit}){
