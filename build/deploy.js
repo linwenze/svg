@@ -1,70 +1,17 @@
 const inquirer = require('inquirer');
 const ghpages = require('gh-pages');
 const execShPromise = require('exec-sh').promise;
-
 const envConfig = [
   'demo',
   'dev',
   'test',
   'prod'
 ]
-
 function flog (...args) {
   args.unshift('\n--->')
   args.push('\n')
   console.log(...args)
 }
-
-// const tagHandle = {
-//   demo() {
-//     flog('demo环境默认tag格式为', '年月日_时分_环境')
-//     return dateFormat('YYYYmmdd_HHMM_dev')
-//   },
-//   dev() {
-//     flog('dev环境默认tag格式为', '年月日_时分_环境')
-//     return dateFormat('YYYYmmdd_HHMM_dev')
-//   },
-//   test() {
-//     flog('test环境默认tag格式为', '年月日_时分_环境')
-//     return dateFormat('YYYYmmdd_HHMM_test')
-//   },
-//   async prod() {
-//     let { tag } = await inquirer.prompt([{
-//       name: 'tag',
-//       message: '线上版本请输入tag name (tip：必须包含项目名缩写及版本号，如cst_v1.0.0)',
-//       type: 'input',
-//       validate: (value) => {
-//         if (!/v\d+\.\d+\.\d+/g.test(value) || !value.includes('_')) {
-//           return false
-//         }
-//         return true
-//       }
-//     }])
-//     return tag
-//   }
-// }
-
-// function dateFormat(fmt, date) {
-//   date = date || new Date()
-//   let ret;
-//   const opt = {
-//       "Y+": date.getFullYear().toString(),        // 年
-//       "m+": (date.getMonth() + 1).toString(),     // 月
-//       "d+": date.getDate().toString(),            // 日
-//       "H+": date.getHours().toString(),           // 时
-//       "M+": date.getMinutes().toString(),         // 分
-//       "S+": date.getSeconds().toString()          // 秒
-//       // 有其他格式化字符需求可以继续添加，必须转化成字符串
-//   };
-//   for (let k in opt) {
-//       ret = new RegExp("(" + k + ")").exec(fmt);
-//       if (ret) {
-//           fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))
-//       };
-//   };
-//   return fmt;
-// }
-
 async function deploy() {
   const { env } = await inquirer.prompt([{
     name: 'env',
@@ -85,11 +32,7 @@ async function deploy() {
     message: '请输入commit message，默认为版本更新：',
     type: 'input',
   }])
-
-//   const tag = await tagHandle[env]()
-
   message = message === '' ? '版本更新' : message
-
   if (build) {
     try {
       await execShPromise(`npm run build-${env}`)
@@ -99,7 +42,6 @@ async function deploy() {
       return
     }
   }
-
   await publish({
     message,
   }).then(async (res) => {
@@ -113,7 +55,6 @@ async function deploy() {
   })
 
 }
-
 async function publish(options) {
   return new Promise((resolve, reject) => {
     const publishOptions = {
