@@ -1,68 +1,41 @@
 <template>
- <div class="hello">
-    MESSAGE页面
-    <div>
-      <a href="/#/about">about</a>
+  <div id="app" style="font-size:20px">
+    <div class="test">
+       <vue-tree
+      v-model="checkedIds"
+      :tree-data="treeData"
+      :options="options"
+    />
     </div>
-   
-    <div>
-      <a href="/#/HelloWorld">HelloWorld</a>
-    </div>
-     <div>
-      <a href="/#/singleStore">singleStore</a>
-    </div>
-     <div>
-      <a href="/#/modulesStore">modulesStore</a>
-    </div>
-    <div>{{msg}}</div>
-    <button @click="setMsg('334343434')">设置消息</button>
-    <div>长度为{{msglen}}</div> 
-
-     <div>长度为{{$store.state.message.msg}}</div> 
-     </div>
+   <div @click="show">dfsfsdf</div>
+  </div>
 </template>
 
 <script>
-import { mapMutations,mapActions,mapGetters,mapState } from "vuex";
+import Tree from './tree.json';
 export default {
-  name: 'HelloWorld',
+  name: 'app',
   data () {
     return {
+      checkedIds: [],
+      treeData: Tree.data,
+      options: {
+        someOption: true,
+        checkbox:true,
+        depthOpen:5,
+        openIcon:'ico-view',
+        checkedIcon:'ico-view',
+        uncheckedIcon:'ico-uncheck',
+        checkedIcon:'ico-checked',
+        halfCheckedIcon:'ico-cancheck'
+      }
     }
   },
-  created(){
-    // this.error('3343434')
-
-  },
-   methods: {
-    ...mapActions(['error','message.setMsg']),
-    ...mapActions({setMsg:'message.setMsg'}),
-   },
-  computed: {
-    ...mapGetters(['message.msglen']),
-    ...mapGetters({msglen:'message.msglen'}),
-   ...mapState({
-    msg: state=>state.message.msg,
-    })
+  methods:{
+    show(){
+      console.log(this.checkedIds)
+      console.log(this.options.checkedIds)
+    }
   }
- 
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

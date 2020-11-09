@@ -13,6 +13,9 @@
 
 <script>
 import { mapMutations,mapActions,mapState } from "vuex";
+import * as a from './config/util'
+import VConsole from 'vconsole'
+
 export default {
   name: 'App',
   methods: {
@@ -20,12 +23,15 @@ export default {
   },
    computed: {
     ...mapState(['tipShow','tips'])
+  },
+  created(){
+    if(a.getQueryString('debug') === 'true'){new VConsole();}
   }
 }
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,5 +43,5 @@ export default {
   background: rgba(0,0,0,0.8);
   width:100%;height:100vh;
 }
-#app div{font-size:50px;color:red;}
+#app div{font-size:50px;color:red;} */
 </style>

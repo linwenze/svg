@@ -6,7 +6,18 @@ import router from './router'
 import store from './store'
 import './iconfont/fonts/font.css'
 import './assets/css/index.css'
+// import Element from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
+import VueCropper from 'vue-cropper'
+import picker from 'vue-zoe-picker'
+import Vuetree from 'vue-simple-tree'
+import tree from "vue-giant-tree";
+Vue.use(Vuetree)
+Vue.use(picker)
+Vue.use(VueCropper)
+// Vue.use(Element, { size: 'small', zIndex: 3000 });
 Vue.config.productionTip = false
+Vue.component('tree', tree)
 
 /* eslint-disable no-new */
 // new Vue({

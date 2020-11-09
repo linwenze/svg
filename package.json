@@ -10,11 +10,22 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "add": "^2.0.6",
+    "and": "0.0.3",
+    "cropperjs": "^1.5.7",
+    "element-ui": "^2.13.0",
+    "exif-js": "^2.3.0",
     "postcss-pxtorem": "^4.0.1",
     "vue": "^2.5.2",
+    "vue-circleprogressbar": "^1.3.0",
+    "vue-cropper": "^0.5.2",
+    "vue-giant-tree": "^0.1.2",
     "vue-router": "^3.0.1",
+    "vue-simple-tree": "^2.3.2",
+    "vue-zoe-picker": "0.0.3",
     "vuex": "^3.1.1",
-    "webpack-iconfont-plugin-nodejs": "^1.0.16"
+    "webpack-iconfont-plugin-nodejs": "^1.0.16",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",

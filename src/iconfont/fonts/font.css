@@ -1,10 +1,10 @@
 @font-face {
     font-family: my-icons;
-    src: url("my-icons.eot");src: url("my-icons.eot?28436e55#iefix") format("embedded-opentype"),
-             url("my-icons.woff2?28436e55") format("woff2"),
-             url("my-icons.woff?28436e55") format("woff"),
-             url("my-icons.ttf?28436e55") format("truetype"),
-             url("my-icons.svg?28436e55#my-icons") format("svg");
+    src: url("my-icons.eot");src: url("my-icons.eot?07399e57#iefix") format("embedded-opentype"),
+             url("my-icons.woff2?07399e57") format("woff2"),
+             url("my-icons.woff?07399e57") format("woff"),
+             url("my-icons.ttf?07399e57") format("truetype"),
+             url("my-icons.svg?07399e57#my-icons") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -17,7 +17,19 @@
 }
 
 
-.ico-view::before {
+.ico-cancheck::before {
     content: "\ea01";
+}
+
+.ico-checked::before {
+    content: "\ea02";
+}
+
+.ico-uncheck::before {
+    content: "\ea03";
+}
+
+.ico-view::before {
+    content: "\ea04";
 }
 

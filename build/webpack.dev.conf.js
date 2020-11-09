@@ -49,7 +49,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       'process.env': require('../config/dev.env')
     }),
     new vConsolePlugin({
-      enable: true // 发布代码前记得改回 false
+      enable: false // 发布代码前记得改回 false
   }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
